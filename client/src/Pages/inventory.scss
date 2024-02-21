@@ -1,0 +1,15 @@
+.inventory {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
+  padding: 30px;
+  gap: 100px;
+  justify-content: left;
+  position: relative;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

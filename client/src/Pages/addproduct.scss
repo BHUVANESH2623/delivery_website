@@ -1,0 +1,27 @@
+.addproduct {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    .box {
+      display: flex;
+
+      .card {
+        display: flex;
+        padding: 20px 75px;
+        gap: 20px;
+        flex-direction: column;
+
+        .input {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}
