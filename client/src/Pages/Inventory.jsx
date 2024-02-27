@@ -22,7 +22,8 @@ export const Inventory = () => {
     try {
       const fetch = async () => {
         const res = await axios.get(
-          "https://delivery-website-backend.onrender.com/inventory/"
+          "https://delivery-website-backend.onrender.com/inventory/",
+          { withCredentials: true }
         );
         console.log(res.data);
         setItems(res.data);
@@ -43,7 +44,7 @@ export const Inventory = () => {
     try {
       const id = orderItem.id;
       await axios.post(
-        "https://delivery-website-backend.onrender.com/order",
+        "https://delivery-website-backend.onrender.com/order/",
         { id, count, address, itemstatus },
         { withCredentials: true }
       );
