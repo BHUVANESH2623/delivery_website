@@ -1,0 +1,44 @@
+.delivery {
+  display: flex;
+  padding: 20px;
+  margin-top: 50px;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      background-color: #913737;
+      padding: 10px;
+      text-align: left;
+    }
+
+    tr {
+      &:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+
+        .success {
+          margin-left: 20px;
+          padding: 5px;
+          border: none;
+          background-color: rgb(30, 232, 30);
+          color: white;
+          border-radius: 5px;
+        }
+        .ordered {
+          margin-left: 20px;
+          padding: 5px;
+          border-radius: 5px;
+          border: none;
+          background-color: rgb(240, 63, 39);
+          color: white;
+        }
+      }
+    }
+  }
+}

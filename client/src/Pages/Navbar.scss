@@ -1,20 +1,36 @@
 .navbar {
-  display: flex;
-  padding: 20px;
+  background-color: #484848;
+  color: white;
+  padding: 10px 0;
+
   .container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 50px;
-    justify-content: flex-end;
-    width: 100%;
+
     .left {
-      flex: 8;
-      color: rgb(8, 82, 82);
+      h1 {
+        margin: 0;
+      }
     }
+
     .right {
       display: flex;
-      flex: 2;
-      gap: 30px;
+      gap: 20px;
+
+      a {
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+
+        span {
+          padding: 5px 10px;
+          border-radius: 5px;
+          &:hover {
+            background-color: #555;
+          }
+        }
+      }
     }
   }
 }

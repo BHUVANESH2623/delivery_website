@@ -1,4 +1,8 @@
 table {
+  // display: flex;
+  // flex-direction: column;
+  margin-top: 50px;
+  padding: 20px;
   width: 100%;
   border-collapse: collapse;
 
@@ -10,7 +14,7 @@ table {
   }
 
   th {
-    background-color: blue;
+    background-color: rgb(98, 98, 173);
     color: white;
   }
 

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
-
 export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
@@ -9,14 +8,18 @@ export const UserContextProvider = ({ children }) => {
   );
 
   const login = async ({ name, email, role, password }) => {
-    const res = await axios.post(
-      "http://localhost:8080/user/login",
-      { name, email, role, password },
-      {
-        withCredentials: true,
-      }
-    );
-    setUser(res.data);
+    try {
+      const res = await axios.post(
+        "http://localhost:8080/user/login",
+        { name, email, role, password },
+        {
+          withCredentials: true,
+        }
+      );
+      setUser(res.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const logout = async () => {
@@ -33,9 +36,13 @@ export const UserContextProvider = ({ children }) => {
     localStorage.setItem("currentUser", JSON.stringify(user));
   }, [user]);
 
+  const [project, setProject] = useState(false);
+
   return (
     <div>
-      <UserContext.Provider value={{ login, user, logout }}>
+      <UserContext.Provider
+        value={{ login, user, logout, project, setProject }}
+      >
         {children}
       </UserContext.Provider>
     </div>

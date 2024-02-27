@@ -7,6 +7,9 @@ import { Register } from "./Pages/Register";
 import { Inventory } from "./Pages/Inventory";
 import { AddProduct } from "./Pages/AddProduct";
 import { Employee } from "./Pages/Employee";
+import { Dashboard } from "./Pages/Dashboard";
+import DefaultHome from "./Pages/DefaultHome";
+import { Delivery } from "./Pages/Delivery";
 
 function App() {
   const Layout = () => {
@@ -24,8 +27,12 @@ function App() {
       path: "/",
       children: [
         {
-          element: <Home />,
+          element: <DefaultHome />,
           path: "/",
+        },
+        {
+          element: <Home />,
+          path: "/home",
         },
         {
           path: "/login",
@@ -46,6 +53,14 @@ function App() {
         {
           path: "/employee",
           element: <Employee />,
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/delivery",
+          element: <Delivery />,
         },
       ],
     },
