@@ -6,7 +6,9 @@ export const Home = () => {
   const [emp, setEmp] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      const res = await axios.get("http://localhost:8080/employee");
+      const res = await axios.get(
+        "https://delivery-website-backend.onrender.com/employee"
+      );
 
       setEmp(res.data);
     };

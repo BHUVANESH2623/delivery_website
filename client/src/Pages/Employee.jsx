@@ -47,9 +47,13 @@ export const Employee = () => {
       return;
     }
 
-    await axios.post("http://localhost:8080/employee", emp, {
-      withCredentials: true,
-    });
+    await axios.post(
+      "https://delivery-website-backend.onrender.com/employee",
+      emp,
+      {
+        withCredentials: true,
+      }
+    );
 
     setBl(!bl);
     navigate("/home");

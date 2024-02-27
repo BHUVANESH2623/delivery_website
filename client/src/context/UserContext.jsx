@@ -10,7 +10,7 @@ export const UserContextProvider = ({ children }) => {
   const login = async ({ name, email, role, password }) => {
     try {
       const res = await axios.post(
-        "http://localhost:8080/user/login",
+        "https://delivery-website-backend.onrender.com/user/login",
         { name, email, role, password },
         {
           withCredentials: true,
@@ -24,7 +24,9 @@ export const UserContextProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post("http://localhost:8080/user/logout");
+      await axios.post(
+        "https://delivery-website-backend.onrender.com/user/logout"
+      );
       // localStorage.removeItem("currentUser");
       setUser(null);
     } catch (err) {

@@ -15,9 +15,12 @@ export const Dashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/order/userorder", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://delivery-website-backend.onrender.com/order/userorder",
+          {
+            withCredentials: true,
+          }
+        );
         setViewOrders(res.data);
         console.log(res.data); // Moved console.log here
       } catch (error) {

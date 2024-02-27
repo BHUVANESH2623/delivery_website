@@ -20,7 +20,7 @@ export const Register = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:8080/user/register",
+        "https://delivery-website-backend.onrender.com/user/register",
         { name, email, role, password },
         {
           withCredentials: true,

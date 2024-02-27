@@ -30,9 +30,13 @@ export const AddProduct = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8080/inventory", product, {
-        withCredentials: true,
-      });
+      await axios.post(
+        "https://delivery-website-backend.onrender.com/inventory",
+        product,
+        {
+          withCredentials: true,
+        }
+      );
 
       setProduct({ itemname: "", type: "", stock: 0, expire: "" });
     } catch (error) {

@@ -9,9 +9,12 @@ export const Delivery = () => {
 
   const handleDelivery = async (itemId) => {
     try {
-      await axios.put(`http://localhost:8080/order/${itemId}`, {
-        withCredentials: true,
-      });
+      await axios.put(
+        `https://delivery-website-backend.onrender.com/order/${itemId}`,
+        {
+          withCredentials: true,
+        }
+      );
       setReloadCounter((prevCounter) => prevCounter + 1);
     } catch (error) {
       console.log(error);
@@ -21,9 +24,12 @@ export const Delivery = () => {
   useEffect(() => {
     try {
       const fetch = async () => {
-        const res = await axios.get("http://localhost:8080/delivery/items", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://delivery-website-backend.onrender.com/delivery/items",
+          {
+            withCredentials: true,
+          }
+        );
         // console.log(res.data);
         setItems(res.data);
       };
