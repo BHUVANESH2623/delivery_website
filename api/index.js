@@ -14,7 +14,10 @@ app.use((req, res, next) => {
 });
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: [
+      "https://delivery-website-frontend.onrender.com",
+      "https://delivery-website-tau.vercel.app",
+    ],
   })
 );
 app.use(express.json());
